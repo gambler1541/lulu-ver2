@@ -1,5 +1,11 @@
+import Appointment from './appointment/Appointment';
+
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <>
+      <Appointment />
+    </>
+  );
 };
 
 export default Main;

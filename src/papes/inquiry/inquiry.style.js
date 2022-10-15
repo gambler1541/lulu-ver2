@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const RegistrationWrap = styled.div`
-  .registrationContainer {
-    .registrationHeader {
+export const InquiryWrap = styled.div`
+  .inquiryContainer {
+    .inquiryHeader {
       max-width: 68.75rem;
       margin: 0 auto;
       margin-top: 0.938rem;
@@ -17,13 +17,9 @@ export const RegistrationWrap = styled.div`
           font-size: 1.563rem;
         }
       }
-
-      .notice {
-        text-align: left;
-      }
     }
 
-    .registrationContents {
+    .inquiryContents {
       max-width: 30rem;
       margin: 0 auto;
       border: 0.063rem solid black;
