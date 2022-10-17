@@ -36,9 +36,14 @@ const Appointment = () => {
   };
 
   const dateValidation = date => {
-    if (filterDateList.find(x => x === moment(date).format('DD-MM-YYYY'))) {
+    if (date < moment()) {
       setSelectDate('');
-      alert('예약이 불가능합니다.');
+      alert('선택 불가능 한 날짜입니다.');
+    } else if (
+      filterDateList.find(x => x === moment(date).format('DD-MM-YYYY'))
+    ) {
+      setSelectDate('');
+      alert('예약이 다 찼습니다.');
     } else {
       setSelectDate(moment(date).format('YYYY-MM-DD'));
     }
@@ -81,7 +86,8 @@ const Appointment = () => {
                 if (
                   filterDateList.find(
                     x => x === moment(date).format('DD-MM-YYYY')
-                  )
+                  ) ||
+                  date < moment()
                 ) {
                   return 'duplicateDate';
                 }

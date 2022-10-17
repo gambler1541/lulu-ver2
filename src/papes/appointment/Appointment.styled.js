@@ -38,7 +38,8 @@ export const AppointmentWrap = styled.div`
         }
 
         .duplicateDate {
-          background-color: red;
+          background-color: #cccccc;
+          color: #a5a5a5;
         }
       }
 
