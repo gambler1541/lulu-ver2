@@ -1,15 +1,70 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppointmentWrap } from './Appointment.styled';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import moment from 'moment';
 
 const Appointment = () => {
   const navigate = useNavigate();
+  const [appointList, setAppointList] = useState([]);
+  const [appointDateList, setAppointDateList] = useState([]);
+  const [filterDateList, setFilterDateList] = useState([]);
+  const [selectDate, setSelectDate] = useState('');
 
-  const GoToRegistration = () => {
-    navigate('/registration');
+  const goToRegistration = () => {
+    if (selectDate === '') {
+      alert('날짜를 선택해 주세요.');
+    } else {
+      navigate('/registration', { state: { selectDate } });
+    }
   };
+
+  const countByElement = (arr, val) => {
+    return arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+  };
+
+  const convertDigitIn = str => {
+    return str.split('-').reverse().join('-');
+  };
+
+  const getDate = (arr, newArr) => {
+    arr.map(item => {
+      newArr.push(item.appointmentDate);
+    });
+    return newArr;
+  };
+
+  const dateValidation = date => {
+    if (filterDateList.find(x => x === moment(date).format('DD-MM-YYYY'))) {
+      setSelectDate('');
+      alert('예약이 불가능합니다.');
+    } else {
+      setSelectDate(moment(date).format('YYYY-MM-DD'));
+    }
+  };
+
+  useEffect(() => {
+    fetch('data/Appointment.json')
+      .then(res => res.json())
+      .then(data => {
+        setAppointList(data.appointment);
+        setAppointDateList(getDate(data.appointment, []));
+      });
+  }, []);
+
+  useEffect(() => {
+    let filterDate = [];
+    appointDateList.map(item => {
+      if (countByElement(appointDateList, item) == 9) {
+        filterDate.push(convertDigitIn(item));
+      }
+
+      setFilterDateList(() =>
+        filterDate.filter((el, index) => filterDate.indexOf(el) === index)
+      );
+    });
+  }, [appointList]);
 
   return (
     <AppointmentWrap>
@@ -21,10 +76,21 @@ const Appointment = () => {
         </div>
         <div className="appointContents">
           <div className="calendarBox">
-            <Calendar />
+            <Calendar
+              tileClassName={({ date }) => {
+                if (
+                  filterDateList.find(
+                    x => x === moment(date).format('DD-MM-YYYY')
+                  )
+                ) {
+                  return 'duplicateDate';
+                }
+              }}
+              onChange={dateValidation}
+            />
           </div>
           <div className="appointBody">
-            <div className="appointBtn" onClick={GoToRegistration}>
+            <div className="appointBtn" onClick={goToRegistration}>
               <span className="appointBtnTitle">진료예약</span>
               <img src="/images/document.png" />
               <span className="appointBtnText">

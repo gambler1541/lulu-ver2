@@ -4,7 +4,7 @@
       "name": "이은지",
       "ssn": "930725-2015262",
       "phoneNum": "010-1234-5678",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "09:00",
       "treatmentSubject": "신경외과"
     },
@@ -12,7 +12,7 @@
       "name": "조경준",
       "ssn": "910212-1031412",
       "phoneNum": "010-4567-6547",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "10:00",
       "treatmentSubject": "일반외과"
     },
@@ -20,7 +20,7 @@
       "name": "박명배",
       "ssn": "931008-1013452",
       "phoneNum": "010-1537-9845",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "11:00",
       "treatmentSubject": "소아과"
     },
@@ -28,7 +28,7 @@
       "name": "최수환",
       "ssn": "920112-1134262",
       "phoneNum": "010-8765-1234",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "13:00",
       "treatmentSubject": "비뇨기과"
     },
@@ -36,7 +36,7 @@
       "name": "김지은",
       "ssn": "961225-2764521",
       "phoneNum": "010-5764-5623",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "14:00",
       "treatmentSubject": "피부과"
     },
@@ -44,7 +44,7 @@
       "name": "나주경",
       "ssn": "890125-2034765",
       "phoneNum": "010-1874-5578",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "15:00",
       "treatmentSubject": "이비인후과"
     },
@@ -52,7 +52,7 @@
       "name": "박순자",
       "ssn": "680222-2034125",
       "phoneNum": "010-1354-5689",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
       "appointmentTime": "16:00",
       "treatmentSubject": "안과"
     },
@@ -60,7 +60,23 @@
       "name": "박찬슬",
       "ssn": "950629-1050419",
       "phoneNum": "010-1124-5354 ",
-      "appointmentDate": "2022/10/15",
+      "appointmentDate": "2022-10-28",
+      "appointmentTime": "17:00",
+      "treatmentSubject": "흉부외과"
+    },
+    {
+      "name": "김한솔",
+      "ssn": "90219-156789",
+      "phoneNum": "010-1124-5354 ",
+      "appointmentDate": "2022-10-28",
+      "appointmentTime": "18:00",
+      "treatmentSubject": "흉부외과"
+    },
+    {
+      "name": "이나니",
+      "ssn": "950829-2020456",
+      "phoneNum": "010-5265-5234 ",
+      "appointmentDate": "2022-11-01",
       "appointmentTime": "17:00",
       "treatmentSubject": "흉부외과"
     }

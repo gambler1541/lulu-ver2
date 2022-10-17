@@ -14,7 +14,8 @@ export const AppointmentWrap = styled.div`
         margin-bottom: 0.938rem;
 
         .titleFont {
-          font-size: 1.563rem;
+          font-size: 1.7rem;
+          font-weight: 600;
         }
       }
     }
@@ -34,6 +35,10 @@ export const AppointmentWrap = styled.div`
           margin-left: 3rem;
           margin-top: 3rem;
           margin-bottom: 3rem;
+        }
+
+        .duplicateDate {
+          background-color: red;
         }
       }
 

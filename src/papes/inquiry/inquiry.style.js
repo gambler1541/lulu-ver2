@@ -8,13 +8,14 @@ export const InquiryWrap = styled.div`
       margin-top: 0.938rem;
       margin-bottom: 3rem;
       text-align: center;
+      border-bottom: 0.063rem solid #a5a5a5;
 
       .title {
         margin-bottom: 0.938rem;
-        border-bottom: 0.063rem solid black;
 
         .titleFont {
-          font-size: 1.563rem;
+          font-size: 1.7rem;
+          font-weight: 600;
         }
       }
     }
@@ -22,20 +23,64 @@ export const InquiryWrap = styled.div`
     .inquiryContents {
       max-width: 30rem;
       margin: 0 auto;
-      border: 0.063rem solid black;
+      border: 0.063rem solid #a5a5a5;
       border-radius: 0.313rem;
 
       form {
         margin: 30px 40px;
         text-align: center;
 
-        label {
-          margin-right: 30px;
-        }
+        div {
+          margin-bottom: 13px;
+          display: flex;
+          justify-content: space-around;
 
-        input {
-          margin-top: 10px;
+          label {
+            width: 30%;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+          }
+
+          input {
+            width: 70%;
+            font-size: 18px;
+          }
+
+          input:focus {
+            outline: 3px solid #f5f5f5;
+          }
+
+          input::placeholder {
+            color: #a3a3a3;
+            padding-left: 7px;
+          }
         }
+      }
+
+      .inquiryBtn {
+        width: 100px;
+        height: 40px;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+
+    .notice {
+      max-width: 68.75rem;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 3rem;
+
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        color: #616161;
       }
     }
   }

@@ -8,18 +8,15 @@ export const RegistrationWrap = styled.div`
       margin-top: 0.938rem;
       margin-bottom: 3rem;
       text-align: center;
+      border-bottom: 0.063rem solid black;
 
       .title {
         margin-bottom: 0.938rem;
-        border-bottom: 0.063rem solid black;
 
         .titleFont {
-          font-size: 1.563rem;
+          font-size: 1.7rem;
+          font-weight: 600;
         }
-      }
-
-      .notice {
-        text-align: left;
       }
     }
 
@@ -33,13 +30,65 @@ export const RegistrationWrap = styled.div`
         margin: 30px 40px;
         text-align: center;
 
-        label {
-          margin-right: 30px;
+        div {
+          margin-bottom: 13px;
+          display: flex;
+          justify-content: space-around;
+
+          label {
+            width: 30%;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+          }
+
+          input {
+            width: 70%;
+            font-size: 18px;
+          }
+
+          input:focus {
+            outline: 3px solid #f5f5f5;
+          }
+
+          input::placeholder {
+            color: #a3a3a3;
+            padding-left: 7px;
+          }
+
+          .appointDate {
+            color: #a3a3a3;
+          }
         }
 
-        input {
-          margin-top: 10px;
+        .timeSelecter {
+          display: flex;
+          justify-content: flex-start;
         }
+      }
+
+      .registrationBtn {
+        width: 100px;
+        height: 40px;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+
+    .notice {
+      max-width: 68.75rem;
+      margin: 0 auto;
+      padding-top: 3rem;
+
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        color: #616161;
       }
     }
   }

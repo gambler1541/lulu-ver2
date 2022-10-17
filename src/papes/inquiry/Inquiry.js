@@ -47,25 +47,27 @@ const Inquiry = () => {
           <div className="title">
             <span className="titleFont">예약 내역 조회</span>
           </div>
-          <div className="notice">
-            <span>진료 예약이 된 이름과 주민번호를 입력해주세요</span>
-          </div>
         </div>
         <div className="inquiryContents">
           <form onSubmit={stopEvent} action="/send">
             <div>
-              <label>예약자명</label>
-              <input placeholder="실명을 입력해주세요"></input>
+              <label htmlFor="name">예약자명</label>
+              <input id="name" placeholder="실명을 입력해주세요"></input>
             </div>
             <div>
-              <label>주민번호</label>
-              <input placeholder="- 를 빼고 입력해주세요"></input>
+              <label htmlFor="ssn">주민번호</label>
+              <input id="ssn" placeholder="- 를 빼고 입력해주세요"></input>
             </div>
-            <button onClick={inquiryBtn}>조회하기</button>
+            <button className="inquiryBtn" onClick={inquiryBtn}>
+              조회하기
+            </button>
           </form>
           <Modal isOpen={modalOpen} style={modalStyle}>
             <InquiryList setModalOpen={setModalOpen} />
           </Modal>
+        </div>
+        <div className="notice">
+          <span>진료 예약이 된 이름과 주민번호를 입력해주세요.</span>
         </div>
       </div>
     </InquiryWrap>
