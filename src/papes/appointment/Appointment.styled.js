@@ -7,7 +7,7 @@ export const AppointmentWrap = styled.div`
       margin: 0 auto;
       margin-top: 0.938rem;
       margin-bottom: 3rem;
-      border-bottom: 0.063rem solid black;
+      border-bottom: 0.063rem solid #a0a6ac;
       text-align: center;
 
       .title {
@@ -23,7 +23,7 @@ export const AppointmentWrap = styled.div`
     .appointContents {
       max-width: 68.75rem;
       margin: 0 auto;
-      border: 0.063rem solid black;
+      border: 0.063rem solid #a0a6ac;
       border-radius: 0.313rem;
 
       display: flex;
@@ -78,8 +78,6 @@ export const AppointmentWrap = styled.div`
             background-color: #cccccc;
             color: #a5a5a5;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="100%" y2="100%" stroke="gray" /></svg>');
-            /* background: #85a2c3;
-            color: white; */
           }
 
           .duplicateDate:hover {
@@ -99,7 +97,7 @@ export const AppointmentWrap = styled.div`
           margin-right: 50px;
           text-align: center;
           display: inline-block;
-          border: 0.063rem solid grey;
+          border: 0.063rem solid #a0a6ac;
           border-radius: 0.625rem;
           cursor: pointer;
 

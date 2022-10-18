@@ -9,7 +9,7 @@ export const InquiryListWrap = styled.div`
 
     tr {
       height: 3.125rem;
-      border: 0.063rem solid #b2b2b2;
+      border: 0.063rem solid #a0a6ac;
       font-size: 1.125rem;
     }
   }

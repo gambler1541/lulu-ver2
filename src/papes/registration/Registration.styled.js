@@ -8,7 +8,7 @@ export const RegistrationWrap = styled.div`
       margin-top: 0.938rem;
       margin-bottom: 3rem;
       text-align: center;
-      border-bottom: 0.063rem solid black;
+      border-bottom: 0.063rem solid #a0a6ac;
 
       .title {
         margin-bottom: 0.938rem;
@@ -23,9 +23,8 @@ export const RegistrationWrap = styled.div`
     .registrationContents {
       max-width: 30rem;
       margin: 0 auto;
-      border: 0.063rem solid black;
+      border: 0.063rem solid #a0a6ac;
       border-radius: 0.313rem;
-      background-color: #fafafa;
 
       form {
         margin: 30px 40px;
@@ -46,6 +45,7 @@ export const RegistrationWrap = styled.div`
           input {
             width: 70%;
             font-size: 18px;
+            border-color: #a0a6ac;
           }
 
           input:focus {
