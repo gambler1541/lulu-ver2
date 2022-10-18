@@ -35,11 +35,57 @@ export const AppointmentWrap = styled.div`
           margin-left: 3rem;
           margin-top: 3rem;
           margin-bottom: 3rem;
-        }
+          border-radius: 15px;
 
-        .duplicateDate {
-          background-color: #cccccc;
-          color: #a5a5a5;
+          .react-calendar__navigation {
+            display: flex;
+            height: 44px;
+            margin-bottom: 1em;
+          }
+
+          .react-calendar__navigation button {
+            min-width: 44px;
+            background: none;
+            font-size: 1.15rem;
+          }
+
+          .react-calendar__month-view__weekdays {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.938rem;
+          }
+
+          .react-calendar__tile {
+            max-width: 100%;
+            padding: 10px 6.6667px;
+            font-size: 0.938rem;
+            text-align: center;
+            border-radius: 4px;
+          }
+
+          .react-calendar__tile--active:enabled:hover,
+          .react-calendar__tile--active:enabled:focus {
+            background: #85a2c3;
+          }
+
+          .react-calendar__tile--active {
+            background: #85a2c3;
+            color: white;
+          }
+
+          .duplicateDate {
+            background-color: #cccccc;
+            color: #a5a5a5;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="100%" y2="100%" stroke="gray" /></svg>');
+            /* background: #85a2c3;
+            color: white; */
+          }
+
+          .duplicateDate:hover {
+            background: #85a2c3;
+            color: white;
+          }
         }
       }
 
