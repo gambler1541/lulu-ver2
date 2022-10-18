@@ -7,8 +7,6 @@ import moment from 'moment';
 
 const Appointment = () => {
   const navigate = useNavigate();
-  const [appointList, setAppointList] = useState([]);
-  const [appointDateList, setAppointDateList] = useState([]);
   const [filterDateList, setFilterDateList] = useState([]);
   const [selectDate, setSelectDate] = useState('');
 
@@ -53,15 +51,27 @@ const Appointment = () => {
     fetch('data/Appointment.json')
       .then(res => res.json())
       .then(data => {
-        setAppointList(data.appointment);
-        setAppointDateList(getDate(data.appointment, []));
+        if (JSON.parse(localStorage.getItem('appointList')) == null) {
+          localStorage.setItem('appointList', JSON.stringify(data.appointment));
+        }
       });
   }, []);
 
   useEffect(() => {
+    localStorage.setItem(
+      'appointDateList',
+      JSON.stringify(
+        getDate(JSON.parse(localStorage.getItem('appointList')), [])
+      )
+    );
     let filterDate = [];
-    appointDateList.map(item => {
-      if (countByElement(appointDateList, item) == 9) {
+    JSON.parse(localStorage.getItem('appointDateList')).map(item => {
+      if (
+        countByElement(
+          JSON.parse(localStorage.getItem('appointDateList')),
+          item
+        ) == 8
+      ) {
         filterDate.push(convertDigitIn(item));
       }
 
@@ -69,8 +79,7 @@ const Appointment = () => {
         filterDate.filter((el, index) => filterDate.indexOf(el) === index)
       );
     });
-  }, [appointList]);
-
+  }, []);
   return (
     <AppointmentWrap>
       <div className="appointContainer">

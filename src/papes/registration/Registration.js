@@ -1,29 +1,62 @@
 import { RegistrationWrap } from './Registration.styled';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Registration = () => {
-  const navigate = useNavigate();
+  const { state } = useLocation();
+  const [selectDateTime, setSelectDateTime] = useState([]);
+  const [selectDate, setSelectDate] = useState('');
   const [userName, setUserName] = useState('');
   const [ssn, setSsn] = useState('');
   const [phoneNum, sePhoneNum] = useState('');
   const [treatmentSubject, setTreatmentSubject] = useState('');
 
-  const { state } = useLocation();
-
-  const GoToInquiry = () => {
-    navigate('/inquiry');
+  const navigate = useNavigate();
+  // 예약이 된 시간
+  const [useTimeArr, setUseTimeArr] = useState([]);
+  // 예약가능한 시간
+  const timeArr = [
+    '09:00',
+    '10:00',
+    '11:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
+  const stopEvent = e => {
+    e.preventDefault();
+  };
+  const GoToInquiry = e => {
+    let arr = JSON.parse(localStorage.getItem('appointList'));
+    arr.push({
+      name: '박순자',
+      ssn: '6802222034125',
+      phoneNum: '01013545689',
+      appointmentDate: '2022-10-28',
+      appointmentTime: '17:00',
+      treatmentSubject: '안과',
+    });
+    localStorage.setItem('appointList', JSON.stringify(arr));
+    navigate('/');
   };
 
+  useEffect(() => {
+    let timeArr = [];
+    JSON.parse(localStorage.getItem('appointList')).map(item => {
+      if (item.appointmentDate === state.selectDate) {
+        timeArr.push(item.appointmentTime);
+      }
+    });
+    setUseTimeArr(timeArr);
+  }, []);
   // const userNameHandler = (e) => {
-
   // }
-
   // 주민번호 13자
   // 진료과목 2자 이상
   // 이름 2자 이상
   // 전화번호 11자
-
   return (
     <RegistrationWrap>
       <div className="registrationContainer">
@@ -33,7 +66,7 @@ const Registration = () => {
           </div>
         </div>
         <div className="registrationContents">
-          <form>
+          <form onSubmit={stopEvent}>
             <div>
               <label htmlFor="name">이름</label>
               <input id="name" placeholder="실명을 입력해주세요"></input>
@@ -58,6 +91,15 @@ const Registration = () => {
               <label name="time">예약시간</label>
               <select name="time" form="form">
                 <option>시간넣으쇼</option>
+                {timeArr.map(item => {
+                  if (!useTimeArr.includes(item)) {
+                    return (
+                      <option key={item} value={item}>
+                        {item}
+                      </option>
+                    );
+                  }
+                })}
               </select>
             </div>
             <div>
