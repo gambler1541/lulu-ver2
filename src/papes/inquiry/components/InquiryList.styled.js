@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const InquiryListWrap = styled.div`
-  margin-top: 15px;
+  margin-top: 0.938rem;
   text-align: center;
+  color: #292929;
 
   table {
     width: 62.5rem;

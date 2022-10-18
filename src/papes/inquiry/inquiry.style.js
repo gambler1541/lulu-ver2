@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const InquiryWrap = styled.div`
   .inquiryContainer {
+    color: #292929;
+
     .inquiryHeader {
       max-width: 68.75rem;
       margin: 0 auto;
@@ -14,7 +16,7 @@ export const InquiryWrap = styled.div`
         margin-bottom: 0.938rem;
 
         .titleFont {
-          font-size: 1.7rem;
+          font-size: 1.75rem;
           font-weight: 600;
         }
       }
@@ -27,46 +29,46 @@ export const InquiryWrap = styled.div`
       border-radius: 0.313rem;
 
       form {
-        margin: 30px 40px;
+        margin: 1.875rem 2.5rem;
         text-align: center;
 
         div {
-          margin-bottom: 13px;
+          margin-bottom: 0.813rem;
           display: flex;
           justify-content: space-around;
 
           label {
             width: 30%;
-            font-size: 18px;
+            font-size: 1.125rem;
             font-weight: 600;
             cursor: pointer;
           }
 
           input {
             width: 70%;
-            font-size: 18px;
+            font-size: 1.125rem;
             border-color: #a0a6ac;
           }
 
           input:focus {
-            outline: 3px solid #f5f5f5;
+            outline: 0.188rem solid #f5f5f5;
           }
 
           input::placeholder {
             color: #a3a3a3;
-            padding-left: 7px;
+            padding-left: 0.438rem;
           }
         }
       }
 
       .inquiryBtn {
-        width: 100px;
-        height: 40px;
-        margin-top: 15px;
-        font-size: 16px;
+        width: 6.25rem;
+        height: 2.5rem;
+        margin-top: 0.938rem;
+        font-size: 1rem;
         font-weight: 600;
         border: none;
-        border-radius: 10px;
+        border-radius: 0.625rem;
         background-color: #e1e9f2;
         cursor: pointer;
       }
@@ -79,7 +81,7 @@ export const InquiryWrap = styled.div`
       padding-top: 3rem;
 
       span {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 600;
         color: #616161;
       }

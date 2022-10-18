@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const AppointmentWrap = styled.div`
   .appointContainer {
+    color: #292929;
+
     .appointHeader {
       max-width: 68.75rem;
       margin: 0 auto;
@@ -14,7 +16,7 @@ export const AppointmentWrap = styled.div`
         margin-bottom: 0.938rem;
 
         .titleFont {
-          font-size: 1.7rem;
+          font-size: 1.75rem;
           font-weight: 600;
         }
       }
@@ -35,16 +37,16 @@ export const AppointmentWrap = styled.div`
           margin-left: 3rem;
           margin-top: 3rem;
           margin-bottom: 3rem;
-          border-radius: 15px;
+          border-radius: 0.938rem;
 
           .react-calendar__navigation {
             display: flex;
-            height: 44px;
+            height: 2.75rem;
             margin-bottom: 1em;
           }
 
           .react-calendar__navigation button {
-            min-width: 44px;
+            min-width: 2.75rem;
             background: none;
             font-size: 1.15rem;
           }
@@ -58,10 +60,10 @@ export const AppointmentWrap = styled.div`
 
           .react-calendar__tile {
             max-width: 100%;
-            padding: 10px 6.6667px;
+            padding: 0.625rem 0.471rem;
             font-size: 0.938rem;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 0.25rem;
           }
 
           .react-calendar__tile--active:enabled:hover,
@@ -94,7 +96,7 @@ export const AppointmentWrap = styled.div`
           width: 15.625rem;
           height: 12.5rem;
           margin-top: 3rem;
-          margin-right: 50px;
+          margin-right: 3.125rem;
           text-align: center;
           display: inline-block;
           border: 0.063rem solid #a0a6ac;
@@ -124,7 +126,9 @@ export const AppointmentWrap = styled.div`
           margin-top: 2rem;
           padding-right: 2.9rem;
           font-size: 1.438rem;
+          font-weight: 600;
           text-align: center;
+          color: #616161;
         }
       }
     }
