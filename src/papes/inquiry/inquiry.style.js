@@ -47,7 +47,6 @@ export const InquiryWrap = styled.div`
           input {
             width: 70%;
             font-size: 1.125rem;
-            border-color: #a0a6ac;
           }
 
           input:focus {

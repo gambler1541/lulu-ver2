@@ -47,7 +47,6 @@ export const RegistrationWrap = styled.div`
           input {
             width: 70%;
             font-size: 1.125rem;
-            border-color: #a0a6ac;
           }
 
           input:focus {
@@ -60,6 +59,13 @@ export const RegistrationWrap = styled.div`
           }
 
           .appointDate {
+            color: #a3a3a3;
+          }
+
+          select {
+            width: 70%;
+            font-size: 1.125rem;
+            border-color: #a0a6ac;
             color: #a3a3a3;
           }
         }
