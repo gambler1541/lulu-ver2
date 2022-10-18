@@ -10,6 +10,21 @@ const Registration = () => {
   const [ssn, setSsn] = useState('');
   const [phoneNum, sePhoneNum] = useState('');
   const [treatmentSubject, setTreatmentSubject] = useState('');
+  const [registration, setRegistration] = useState({
+    name: '',
+    ssn: '',
+    phoneNum: '',
+    appointmentDate: state.selectDate,
+    appointmentTime: '',
+    treatmentSubject: '',
+  });
+
+  const information = e => {
+    setRegistration({
+      ...registration,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const navigate = useNavigate();
   // 예약이 된 시간
@@ -25,19 +40,14 @@ const Registration = () => {
     '16:00',
     '17:00',
   ];
+
   const stopEvent = e => {
     e.preventDefault();
   };
+
   const GoToInquiry = e => {
     let arr = JSON.parse(localStorage.getItem('appointList'));
-    arr.push({
-      name: '박순자',
-      ssn: '6802222034125',
-      phoneNum: '01013545689',
-      appointmentDate: '2022-10-28',
-      appointmentTime: '17:00',
-      treatmentSubject: '안과',
-    });
+    arr.push(registration);
     localStorage.setItem('appointList', JSON.stringify(arr));
     navigate('/');
   };
@@ -57,6 +67,7 @@ const Registration = () => {
   // 진료과목 2자 이상
   // 이름 2자 이상
   // 전화번호 11자
+  console.log(registration);
   return (
     <RegistrationWrap>
       <div className="registrationContainer">
@@ -69,15 +80,30 @@ const Registration = () => {
           <form onSubmit={stopEvent}>
             <div>
               <label htmlFor="name">이름</label>
-              <input id="name" placeholder="실명을 입력해주세요"></input>
+              <input
+                id="name"
+                name="name"
+                onChange={information}
+                placeholder="실명을 입력해주세요"
+              ></input>
             </div>
             <div>
               <label htmlFor="ssn">주민번호</label>
-              <input id="ssn" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="ssn"
+                name="ssn"
+                onChange={information}
+                placeholder="- 를 빼고 입력해주세요"
+              ></input>
             </div>
             <div>
               <label htmlFor="phoneNum">전화번호</label>
-              <input id="phoneNum" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="phoneNum"
+                name="phoneNum"
+                onChange={information}
+                placeholder="- 를 빼고 입력해주세요"
+              ></input>
             </div>
             <div>
               <label>예약날짜</label>
@@ -88,8 +114,13 @@ const Registration = () => {
               ></input>
             </div>
             <div className="timeSelecter">
-              <label name="time">예약시간</label>
-              <select name="time" form="form">
+              <label name="appointmentTime">예약시간</label>
+              <select
+                id="appointmentTime"
+                name="appointmentTime"
+                onChange={information}
+                form="form"
+              >
                 <option>시간넣으쇼</option>
                 {timeArr.map(item => {
                   if (!useTimeArr.includes(item)) {
@@ -106,7 +137,9 @@ const Registration = () => {
               <label htmlFor="treatmentSubject">진료과목</label>
               <input
                 id="treatmentSubject"
+                name="treatmentSubject"
                 placeholder="ex) 신경외과, 일반외과, 피부과"
+                onChange={information}
               ></input>
             </div>
             <button className="registrationBtn" onClick={GoToInquiry}>
