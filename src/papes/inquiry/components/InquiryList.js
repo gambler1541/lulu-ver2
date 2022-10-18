@@ -18,12 +18,41 @@ const InquiryList = ({ setModalOpen }) => {
             <td>김땡</td>
             <td>010-9999-9999</td>
             <td>2022/10/10</td>
-            <td>13시50분</td>
+            <td>13시</td>
+            <td>내과</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>김땡</td>
+            <td>010-9999-9999</td>
+            <td>2022/10/10</td>
+            <td>13시</td>
+            <td>내과</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>김땡</td>
+            <td>010-9999-9999</td>
+            <td>2022/10/10</td>
+            <td>13시</td>
+            <td>내과</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>김땡</td>
+            <td>010-9999-9999</td>
+            <td>2022/10/10</td>
+            <td>13시</td>
             <td>내과</td>
           </tr>
         </tbody>
       </table>
-      <button onClick={() => setModalOpen(false)}>확인</button>
+      <button className="listClose" onClick={() => setModalOpen(false)}>
+        확인
+      </button>
     </InquiryListWrap>
   );
 };

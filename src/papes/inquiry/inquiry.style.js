@@ -25,6 +25,7 @@ export const InquiryWrap = styled.div`
       margin: 0 auto;
       border: 0.063rem solid #a5a5a5;
       border-radius: 0.313rem;
+      background-color: #fafafa;
 
       form {
         margin: 30px 40px;
@@ -66,7 +67,7 @@ export const InquiryWrap = styled.div`
         font-weight: 600;
         border: none;
         border-radius: 10px;
-        background-color: #f5f5f5;
+        background-color: #e1e9f2;
         cursor: pointer;
       }
     }

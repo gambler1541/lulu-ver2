@@ -14,32 +14,6 @@ const Inquiry = () => {
     e.preventDefault();
   };
 
-  const modalStyle = {
-    overlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: '#ffff',
-      zIndex: 10,
-    },
-    content: {
-      display: 'flex',
-      justifyContent: 'center',
-      background: '#ffffe7',
-      overflow: 'auto',
-      top: '15vh',
-      left: '20vw',
-      right: '20vw',
-      bottom: '20vh',
-      WebkitOverflowScrolling: 'touch',
-      borderRadius: '14px',
-      outline: 'none',
-      zIndex: 10,
-    },
-  };
-
   return (
     <InquiryWrap>
       <div className="inquiryContainer">
@@ -72,6 +46,34 @@ const Inquiry = () => {
       </div>
     </InquiryWrap>
   );
+};
+
+const modalStyle = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    zIndex: 10,
+  },
+
+  content: {
+    maxwidth: '100%',
+    width: '1200px',
+    top: '40%',
+    left: '50%',
+    background: '#fafafa',
+    display: 'flex',
+    borderradius: '10px',
+    justifyContent: 'center',
+    position: 'absolute',
+    transform: 'translate(-50%, -50%)',
+    boxshadow: '0 0 10px rgba(0, 0, 0, 0.3)',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+  },
 };
 
 Modal.setAppElement('#root');
