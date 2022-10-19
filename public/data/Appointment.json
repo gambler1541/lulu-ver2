@@ -1,16 +1,16 @@
 {
   "appointment": [
     {
-      "name": "이은지",
-      "ssn": "9307252015262",
+      "name": "박명배",
+      "ssn": "9210081054848",
       "phoneNum": "01012345678",
       "appointmentDate": "2022-10-28",
       "appointmentTime": "09:00",
       "treatmentSubject": "신경외과"
     },
     {
-      "name": "조경준",
-      "ssn": "9102121031412",
+      "name": "박명배",
+      "ssn": "9210081054848",
       "phoneNum": "01045676547",
       "appointmentDate": "2022-10-28",
       "appointmentTime": "10:00",
@@ -18,14 +18,14 @@
     },
     {
       "name": "박명배",
-      "ssn": "9310081013452",
+      "ssn": "9210081054848",
       "phoneNum": "01015379845",
       "appointmentDate": "2022-10-28",
       "appointmentTime": "11:00",
       "treatmentSubject": "소아과"
     },
     {
-      "name": "최수환",
+      "name": "박명배",
       "ssn": "9201121134262",
       "phoneNum": "01087651234",
       "appointmentDate": "2022-10-28",
@@ -33,16 +33,16 @@
       "treatmentSubject": "비뇨기과"
     },
     {
-      "name": "김지은",
-      "ssn": "9612252764521",
+      "name": "박명배",
+      "ssn": "9210081054848",
       "phoneNum": "01057645623",
       "appointmentDate": "2022-10-28",
       "appointmentTime": "14:00",
       "treatmentSubject": "피부과"
     },
     {
-      "name": "나주경",
-      "ssn": "8901252034765",
+      "name": "박명배",
+      "ssn": "9210081054848",
       "phoneNum": "01018745578",
       "appointmentDate": "2022-10-28",
       "appointmentTime": "15:00",

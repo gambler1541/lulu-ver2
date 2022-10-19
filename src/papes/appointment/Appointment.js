@@ -114,7 +114,12 @@ const Appointment = () => {
                 예약 해주세요.
               </span>
             </div>
-            <div className="appointBtn">
+            <div
+              className="appointBtn"
+              onClick={() => {
+                navigate('/inquiry');
+              }}
+            >
               <span className="appointBtnTitle">상담예약</span>
               <img src="/images/telephone.png" />
               <span className="appointBtnText">

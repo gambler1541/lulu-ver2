@@ -1,10 +1,21 @@
 import { InquiryWrap } from './inquiry.style';
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import Modal from 'react-modal';
 import InquiryList from '../inquiry/components/InquiryList';
 
 const Inquiry = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    ssn: '',
+  });
+
+  const information = e => {
+    setUserInfo({
+      ...userInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const inquiryBtn = () => {
     setModalOpen(true);
@@ -26,18 +37,28 @@ const Inquiry = () => {
           <form onSubmit={stopEvent} action="/send">
             <div>
               <label htmlFor="name">예약자명</label>
-              <input id="name" placeholder="실명을 입력해주세요"></input>
+              <input
+                id="name"
+                name="name"
+                onChange={information}
+                placeholder="실명을 입력해주세요"
+              ></input>
             </div>
             <div>
               <label htmlFor="ssn">주민번호</label>
-              <input id="ssn" placeholder="- 를 빼고 입력해주세요"></input>
+              <input
+                id="ssn"
+                name="ssn"
+                onChange={information}
+                placeholder="- 를 빼고 입력해주세요"
+              ></input>
             </div>
             <button className="inquiryBtn" onClick={inquiryBtn}>
               조회하기
             </button>
           </form>
           <Modal isOpen={modalOpen} style={modalStyle}>
-            <InquiryList setModalOpen={setModalOpen} />
+            <InquiryList setModalOpen={setModalOpen} userInfo={userInfo} />
           </Modal>
         </div>
         <div className="notice">

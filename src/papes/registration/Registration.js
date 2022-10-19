@@ -19,13 +19,6 @@ const Registration = () => {
     treatmentSubject: '',
   });
 
-  const information = e => {
-    setRegistration({
-      ...registration,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const navigate = useNavigate();
   // 예약이 된 시간
   const [useTimeArr, setUseTimeArr] = useState([]);
@@ -40,6 +33,13 @@ const Registration = () => {
     '16:00',
     '17:00',
   ];
+
+  const information = e => {
+    setRegistration({
+      ...registration,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const stopEvent = e => {
     e.preventDefault();
@@ -67,7 +67,6 @@ const Registration = () => {
   // 진료과목 2자 이상
   // 이름 2자 이상
   // 전화번호 11자
-  console.log(registration);
   return (
     <RegistrationWrap>
       <div className="registrationContainer">
