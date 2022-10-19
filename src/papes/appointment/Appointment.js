@@ -37,6 +37,8 @@ const Appointment = () => {
     if (date < moment()) {
       setSelectDate('');
       alert('선택 불가능 한 날짜입니다.');
+    } else if (date.getDay() == 0) {
+      alert('일요일은 쉽니다.');
     } else if (
       filterDateList.find(x => x === moment(date).format('DD-MM-YYYY'))
     ) {
@@ -96,7 +98,8 @@ const Appointment = () => {
                   filterDateList.find(
                     x => x === moment(date).format('DD-MM-YYYY')
                   ) ||
-                  date < moment()
+                  date < moment() ||
+                  date.getDay() == 0
                 ) {
                   return 'duplicateDate';
                 }

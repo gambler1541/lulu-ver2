@@ -30,7 +30,6 @@ const InquiryList = ({ setModalOpen, userInfo }) => {
         </thead>
         <tbody>
           {myAppointList.map(item => {
-            console.log(item);
             return (
               <tr key={item.name}>
                 <td>{item.name}</td>
